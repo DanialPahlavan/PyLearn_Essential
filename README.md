@@ -1,21 +1,18 @@
 # PyLearn_Essential
 
-============
 
 This project contains several practice questions created for Python and includes the problem with its code.
 
 
 
-
-
 ## Setup
-- Language : Python 10
+- Language : Python 3.11
 - Enviroment : Conda
 - Jupyter notebook
 
 ## Problems
-- 1 : Hello World
-
+- 0 : Hello World
+- 1 : Calculator - Triangle checker - bmi calculator
 ---
 
 ## License

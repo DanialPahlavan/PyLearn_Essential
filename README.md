@@ -6,7 +6,7 @@ This project contains several practice questions created for Python and includes
 
 
 
----
+
 
 ## Setup
 - Language : Python 10

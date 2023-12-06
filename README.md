@@ -12,7 +12,7 @@ This project contains several practice questions created for Python and includes
 
 ## Problems
 - 0 : Hello World
-- 1 : Calculator - Triangle checker - bmi calculator
+- 1 : Calculator - Triangle Checker - BMI Calculator
 ---
 
 ## License

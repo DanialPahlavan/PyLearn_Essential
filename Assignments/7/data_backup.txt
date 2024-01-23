@@ -1,3 +1,2 @@
-{'code': '1', 'name': 'AsusRog', 'price': '55000000', 'count': '3'}
-{'code': '3', 'name': 'Iphone15', 'price': '80000000', 'count': '2'}
-{'code': '2', 'name': 's24', 'price': '75000000', 'count': '2'}
+{'code': '1', 'name': 'iphone', 'price': '2000', 'count': '3'}
+{'code': '2', 'name': 's23', 'price': '1500', 'count': '3'}

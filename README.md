@@ -16,7 +16,7 @@ Dive into a collection of Python questions designed to challenge and intrigue be
 
 ### Solutions :bulb:
 
-Navigate to the `solutions` directory to find well-commented code that explains each step of the solution, ensuring you not only get the 'how' but also the 'why'.
+Navigate to the 📁Assignement ➡️ < question number> , to find well-commented code that explains each step of the solution, ensuring you not only get the 'how' but also the 'why'.
 
 ## How to Use This Repository :books:
 

@@ -1,0 +1,8 @@
+#Write without using Time lib
+
+hh=int(input("Please Write Hour"))
+mm=int(input("Please Write Minute"))
+ss=int(input("Please Write Second"))
+
+print("your time is ",hh,":",mm,":",ss,":\n","Converted to Second = ", (hh*3600)+(mm*60)+ss)
+

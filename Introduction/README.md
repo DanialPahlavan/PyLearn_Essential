@@ -18,6 +18,6 @@
 ### Problem Topics :question:
 
 - **0**: Hello World
-- **1**: Calculator - Triangle Checker - BMI Calculator
+- **1**: Calculator - Triangle Checker - BMI Calculator - Student Academic Status Reporter
 - **3**: Calculator - Triangle Checker - BMI Calculator
 - **4**: Calculator - Triangle Checker - BMI Calculator

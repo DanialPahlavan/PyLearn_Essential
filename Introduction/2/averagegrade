@@ -1,0 +1,14 @@
+Sum = 0 
+CourseNumber =0 
+
+#Student Grade Get
+while (exit != True):
+    UserInput = input("please write your grade or Type 'exit")
+    if UserInput == "exit":
+        break
+    Sum += float(UserInput)
+    CourseNumber += 1
+
+print("Average is",Sum/CourseNumber)
+    
+    

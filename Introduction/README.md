@@ -17,8 +17,7 @@
 
 ### Problem Topics :question:
 
-- **1**: Hello World
-- **2**: Calculator - Triangle Checker - BMI Calculator
+- **0**: Hello World
+- **1**: Calculator - Triangle Checker - BMI Calculator
 - **3**: Calculator - Triangle Checker - BMI Calculator
-- ...and many more!
-
+- **4**: Calculator - Triangle Checker - BMI Calculator

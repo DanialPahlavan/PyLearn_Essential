@@ -11,7 +11,7 @@ Dive into a collection of Python Projects designed to challenge and intrigue beg
 
 ## How to Use This Repository :books:
 
-1. Navigate to the questions number directory you're interested in.
+1. Navigate to the Subject directory you're interested in.
 2. Read the Project question/s in the README .
 3. Write your own code to solve the problem.
 4. Compare your solution with the one provided in this repository.

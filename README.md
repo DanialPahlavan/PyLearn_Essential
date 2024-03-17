@@ -12,11 +12,12 @@ Dive into a collection of Python questions designed to challenge and intrigue be
 
 - **1**: Hello World
 - **2**: Calculator - Triangle Checker - BMI Calculator
+- **3**: Calculator - Triangle Checker - BMI Calculator
 - ...and many more!
 
 ### Solutions :bulb:
 
-Navigate to the 📁Assignement ➡️ < question number> , to find well-commented code that explains each step of the solution, ensuring you not only get the 'how' but also the 'why'.
+Navigate to the 📁Assignement to find well-commented code that explains each step of the solution, ensuring you not only get the 'how' but also the 'why'.
 
 ## How to Use This Repository :books:
 

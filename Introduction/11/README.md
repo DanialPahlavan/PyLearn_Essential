@@ -2,7 +2,7 @@
 
 This README outlines a series of programming projects designed to practice and implement Object-Oriented Programming (OOP) concepts in Python. Each project focuses on creating classes for different mathematical and real-world concepts.
 
-Table of Contents
+## Table of Contents
 
 - 11.1: Fraction Class Project
 - 11.2: Time Class Project
@@ -12,7 +12,7 @@ Table of Contents
 ## 11.1: Fraction Class Project
 
 Complete a class for fractions with the following functionalities:
-
+![fraction](ReadmeContent/image.png)
 ### Operations
 - **Addition**: Implement a method to add two fractions.
 - **Multiplication**: Implement a method to multiply two fractions.

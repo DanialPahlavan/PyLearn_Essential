@@ -1,0 +1,10 @@
+import random
+
+ArraySize=int(input("array size : "))
+a=[]
+for i in range (ArraySize):
+    RandomNumber=random.randint(1,100)
+    if RandomNumber not in a:
+        a.append(RandomNumber)
+
+print(a)

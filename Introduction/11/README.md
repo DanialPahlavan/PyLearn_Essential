@@ -2,7 +2,14 @@
 
 This README outlines a series of programming projects designed to practice and implement Object-Oriented Programming (OOP) concepts in Python. Each project focuses on creating classes for different mathematical and real-world concepts.
 
-## Fraction Class Project
+Table of Contents
+
+- 11.1: Fraction Class Project
+- 11.2: Time Class Project
+- 11.3: Complex Number Class Project
+- 11.4: Carpet Pattern Function Project
+
+## 11.1: Fraction Class Project
 
 Complete a class for fractions with the following functionalities:
 
@@ -14,7 +21,7 @@ Complete a class for fractions with the following functionalities:
 - **To Decimal**: Implement a method to convert a fraction to a decimal number.
 - **Simplify**: Implement a method to simplify a fraction to its lowest terms.
 
-## Time Class Project
+## 11.2: Time Class Project
 
 Create a class for time calculations with the following functionalities:
 
@@ -25,7 +32,7 @@ Create a class for time calculations with the following functionalities:
 - **From Seconds**: Implement a method to set time based on a total number of seconds.
 - **GMT to Tehran Time**: Implement a method to convert GMT time to Tehran time.
 
-## Complex Number Class Project
+## 11.3: Complex Number Class Project
 
 Develop a class for complex number calculations with the following functionalities:
 
@@ -34,7 +41,7 @@ Develop a class for complex number calculations with the following functionaliti
 - **Multiplication**: Implement a method to multiply two complex numbers.
 - **Subtraction**: Implement a method to subtract one complex number from another.
 
-## Carpet Pattern Function Project
+## 11.4: Carpet Pattern Function Project
 
 Write a function that:
 
@@ -50,3 +57,13 @@ Write a function that:
 - For more details on the carpet pattern function, visit Edabit Challenge.
 
 Feel free to use these project outlines to enhance your understanding of OOP in Python and to create functional classes for various applications.
+
+## Contributing
+
+Feel free to contribute questions or solutions by submitting a pull request. Make sure to follow our contribution guidelines.
+
+## Support
+
+If you have any questions or need help, please open an issue, and we'll assist you.
+
+Happy Learning!

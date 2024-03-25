@@ -1,5 +1,3 @@
-Certainly! Let's create an English README for your GitHub project. Below, I'll outline the necessary sections and provide a template for your subfolder.
-
 ## Video Media Management Software
 
 Design software for managing video media. Implement features commonly found in a media store, such as menu design, add/edit/delete functionality, search capabilities, and more.

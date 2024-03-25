@@ -6,75 +6,74 @@ from documentary import Documentary
 from clip import Clip
 import random
 
-PRODUCTS = []
+Products = []
+# get current path and add DB path to file_path
 current_directory = os.path.dirname(os.path.abspath(__file__))
 file_path = os.path.join(current_directory, "dataset.txt")
 
-''' ------------------------------------------------------------------------------------------------ '''     
 
 def choice(ch):
     match ch:
         case 1:
-            Add()
+            add()
         case 2:
-            Edit()
+            edit()
         case 3:
-            Remove()
+            remove()
         case 4:
-            name = input("Please enter the name you are looking for: ")
-            Show_Info(name)
+            # search from name
+            name = input("Search : Enter your Media Name : ")
+            show_info(name)
         case 5:
+            # search from duration
             min_duration = input("Please enter the minimum duration you want: ")
             max_duration = input("Please enter the maximum duration you want: ")
             advanced_search(min_duration, max_duration)
         case 6:
-            name = input("Please enter the name you are looking for: ")
+            # Trailer Downloader
+            name = input("Download Trailer : Please enter media name ")
             download(name)
         case 7:
+            # Suggest Media
             suggest()
         case 8:
+            # save Results and exit
             write_to_database()
             exit(0)
         case _:
             print("Invalid input, try again")
-            Show_menu()
+            show_menu()
 
-''' ------------------------------------------------------------------------------------------------ '''     
 
-def Show_menu():
-        print("1- Add")
-        print("2- Edit")
-        print("3- Remove")
-        print("4- Show Info")
-        print("5- Search by time")
-        print("6- Download Trailer")
-        print("7- Suggest Media")
-        print("8- Exit")
-
-''' ------------------------------------------------------------------------------------------------ '''        
+def show_menu():
+    print("1- Add")
+    print("2- edit")
+    print("3- remove")
+    print("4- Show Info")
+    print("5- Search by time")
+    print("6- Download Trailer")
+    print("7- Suggest Media")
+    print("8- Exit")
 
 
 def read_from_database():
-
     type_to_class = {
         "film": {"class": Film, "variable": "genre"},
         "series": {"class": Series, "variable": "num_episodes"},
         "documentary": {"class": Documentary, "variable": "topic"},
         "clip": {"class": Clip, "variable": "category"}
     }
-   
     with open(file_path, 'r') as f:
         for line in f:
             result = line.strip().split(",")
-            
-            # Check if the line is not empty or contains only whitespace
+            # Check empty
             if result and result[0].strip():
-                obj_type = result[0].strip().lower()  
+                obj_type = result[0].strip().lower()
 
                 if obj_type in type_to_class:
                     media_info = type_to_class[obj_type]
                     media_class = media_info["class"]
-                    variable_name = media_info["variable"]      
+                    variable_name = media_info["variable"]
 
                     my_object = media_class(
                         obj_type,
@@ -87,14 +86,12 @@ def read_from_database():
                         **{variable_name: result[7]}
                     )
 
-                    PRODUCTS.append(my_object)
+                    Products.append(my_object)
                 else:
                     print(f"Unsupported type: {obj_type}")
 
-''' ------------------------------------------------------------------------------------------------ '''     
 
-
-def Add():
+def add():
     obj_type = input("Enter object type (film, series, documentary, clip): ").strip().lower()
 
     type_to_class = {
@@ -117,7 +114,7 @@ def Add():
         media_info = type_to_class[obj_type]
         media_class = media_info["class"]
         variable_name = media_info["variable"]
-        media_type = media_info["type"] 
+        media_type = media_info["type"]
 
         additional_info = input(f"Enter {variable_name} information: ")
 
@@ -132,33 +129,36 @@ def Add():
             **{variable_name: additional_info}
         )
 
-        PRODUCTS.append(my_object)
+        Products.append(my_object)
         print("Item added successfully.")
     else:
         print(f"Unsupported type: {obj_type}")
 
-''' ------------------------------------------------------------------------------------------------ '''     
+
+''' ------------------------------------------------------------------------------------------------ '''
+
 
 def show_edit_menu():
-    print("1- Edit name")
-    print("2- Edit director")
-    print("3- Edit IMDB score")
-    print("4- Edit URL")
-    print("5- Edit duration")
-    print("6- Edit Casts")
+    print("1- edit name")
+    print("2- edit director")
+    print("3- edit IMDB score")
+    print("4- edit URL")
+    print("5- edit duration")
+    print("6- edit Casts")
 
-def Edit():
+
+def edit():
     name = input("Enter the name of the media you want to edit: ").strip()
 
     found = False
-    for product in PRODUCTS:
+    for product in Products:
         if product.name.lower() == name.lower():
             found = True
-            Show_Info(name)
-            
+            show_info(name)
+
             if isinstance(product, Film):
                 show_edit_menu()
-                print("7- Edit genre")
+                print("7- edit genre")
                 choice = input("Enter your choice: ")
                 if choice == '1':
                     new_name = input("Enter new name: ")
@@ -186,7 +186,7 @@ def Edit():
 
             elif isinstance(product, Series):
                 show_edit_menu()
-                print("7- Edit num_episodes")
+                print("7- edit num_episodes")
                 choice = input("Enter your choice: ")
                 if choice == '1':
                     new_name = input("Enter new name: ")
@@ -211,7 +211,7 @@ def Edit():
                     product.num_episodes = new_num_episodes
                 else:
                     print("Invalid choice!")
-                
+
             elif isinstance(product, Documentary):
                 show_edit_menu()
                 choice = input("Enter your choice: ")
@@ -238,10 +238,10 @@ def Edit():
                     product.topic = new_topic
                 else:
                     print("Invalid choice!")
-                
+
             elif isinstance(product, Clip):
                 show_edit_menu()
-                print("7- Edit category")
+                print("7- edit category")
                 choice = input("Enter your choice: ")
                 if choice == '1':
                     new_name = input("Enter new name: ")
@@ -266,7 +266,7 @@ def Edit():
                     product.category = new_category
                 else:
                     print("Invalid choice!")
-                
+
             else:
                 print("Unsupported product type!")
 
@@ -276,20 +276,22 @@ def Edit():
     if not found:
         print(f"Product with name '{name}' not found.")
 
-''' ------------------------------------------------------------------------------------------------ '''     
 
-def Remove():
+''' ------------------------------------------------------------------------------------------------ '''
+
+
+def remove():
     name = input("Enter the name of the product you want to delete: ").strip()
 
     found = False
-    for product in PRODUCTS:
+    for product in Products:
         if product.name.lower() == name.lower():
             found = True
-            Show_Info(name)
-            
+            show_info(name)
+
             confirmation = input("Do you want to delete this product? (y/n): ").lower()
             if confirmation == 'y':
-                PRODUCTS.remove(product)
+                Products.remove(product)
                 print(f"Product '{name}' deleted successfully!")
             else:
                 print("Deletion canceled.")
@@ -298,13 +300,13 @@ def Remove():
     if not found:
         print(f"Product with name '{name}' not found.")
 
-''' ------------------------------------------------------------------------------------------------ '''     
+
+''' ------------------------------------------------------------------------------------------------ '''
 
 
-def Show_Info(name):
-    
+def show_info(name):
     found = False
-    for product in PRODUCTS:
+    for product in Products:
         if product.name.lower() == name.lower():
             found = True
             if isinstance(product, Film):
@@ -316,10 +318,10 @@ def Show_Info(name):
                 print(f"Duration: {product.duration} minutes")
                 print(f"Genre: {product.genre}")
                 print("Casts:")
-                casts=product.casts.split("&")
+                casts = product.casts.split("&")
                 for actor in casts:
                     print(f"- {actor.title()}")
-                
+
             elif isinstance(product, Series):
                 print(f"Name: {product.name}")
                 print("Type: Series")
@@ -329,7 +331,7 @@ def Show_Info(name):
                 print(f"Duration: {product.duration} minutes")
                 print(f"Number of Episodes: {product.num_episodes}")
                 print("Casts:")
-                casts=product.casts.split("&")
+                casts = product.casts.split("&")
                 for actor in casts:
                     print(f"- {actor.title()}")
 
@@ -342,7 +344,7 @@ def Show_Info(name):
                 print(f"Duration: {product.duration} minutes")
                 print(f"Topic: {product.topic}")
                 print("Casts:")
-                casts=product.casts.split("&")
+                casts = product.casts.split("&")
                 for actor in casts:
                     print(f"- {actor.title()}")
 
@@ -355,34 +357,38 @@ def Show_Info(name):
                 print(f"Duration: {product.duration} minutes")
                 print(f"Category: {product.category}")
                 print("Casts:")
-                casts=product.casts.split("&")
+                casts = product.casts.split("&")
                 for actor in casts:
                     print(f"- {actor.title()}")
 
     if not found:
         print(f"Media with name '{name}' not found.")
 
-''' ------------------------------------------------------------------------------------------------ '''     
+
+''' ------------------------------------------------------------------------------------------------ '''
+
 
 def advanced_search(min_duration, max_duration):
     found = False
-    for product in PRODUCTS:
+    for product in Products:
         if min_duration <= product.duration <= max_duration:
             found = True
-            Show_Info(product.name)
+            show_info(product.name)
 
     if not found:
         print(f"No Media found with duration between {min_duration} and {max_duration} minutes.")
 
-''' ------------------------------------------------------------------------------------------------ '''     
+
+''' ------------------------------------------------------------------------------------------------ '''
+
 
 def download(name):
     found = False
-    for product in PRODUCTS:
+    for product in Products:
         if product.name.lower() == name.lower():
             found = True
-            Show_Info(name)
-            user_choice=input("Do you want to download this movie? (y/N): ")
+            show_info(name)
+            user_choice = input("Do you want to download this movie? (y/N): ")
             if user_choice.lower() == 'y':
                 if isinstance(product, Film):
                     product.download()
@@ -393,35 +399,44 @@ def download(name):
     if not found:
         print(f"Product with name '{name}' not found.")
 
-''' ------------------------------------------------------------------------------------------------ '''     
+
+''' ------------------------------------------------------------------------------------------------ '''
+
 
 def suggest():
-    print(random.choice(PRODUCTS))
+    suggestion = random.randrange(1, len(Products))
+    print(Products[suggestion].name)
 
 
 def write_to_database():
     with open(file_path, 'w') as f:
-        for product in PRODUCTS:
+        for product in Products:
             if isinstance(product, Film):
-                data = f"{product.type},{product.name},{product.director},{product.imdb_score},{product.url},{product.duration},{product.casts},{product.genre}"
+                data = (f"{product.type},{product.name},{product.director},"
+                        f"{product.imdb_score},{product.url},{product.duration},{product.casts},{product.genre}")
             elif isinstance(product, Series):
-                data = f"{product.type},{product.name},{product.director},{product.imdb_score},{product.url},{product.duration},{product.casts},{product.num_episodes}"
+                data = (f"{product.type},{product.name},{product.director},"
+                        f"{product.imdb_score},{product.url},{product.duration},{product.casts},{product.num_episodes}")
             elif isinstance(product, Documentary):
-                data = f"{product.type},{product.name},{product.director},{product.imdb_score},{product.url},{product.duration},{product.casts},{product.topic}"
+                data = (f"{product.type},{product.name},{product.director},"
+                        f"{product.imdb_score},{product.url},{product.duration},{product.casts},{product.topic}")
             elif isinstance(product, Clip):
-                data = f"{product.type},{product.name},{product.director},{product.imdb_score},{product.url},{product.duration},{product.casts},{product.category}"
+                data = (f"{product.type},{product.name},{product.director},"
+                        f"{product.imdb_score},{product.url},{product.duration},{product.casts},{product.category}")
             else:
                 print(f"Unsupported product type: {type(product)}")
                 continue
 
-            f.write(str(data)+"\n" )
+            f.write(str(data) + "\n")
 
-''' ------------------------------------------------------------------------------------------------ '''       
-#DB load
+
+''' ------------------------------------------------------------------------------------------------ '''
+# DB load
 print('Welcome to Py Store 🛒')
 read_from_database()
 print('DB load Successfully')
 
 while True:
-    Show_menu()
+    show_menu()
     choice(int(input('Enter your choice: ')))
+    print("debug console")

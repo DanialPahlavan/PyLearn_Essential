@@ -135,7 +135,6 @@ def add():
         print(f"Unsupported type: {obj_type}")
 
 
-''' ------------------------------------------------------------------------------------------------ '''
 
 
 def show_edit_menu():
@@ -270,18 +269,17 @@ def edit():
             else:
                 print("Unsupported product type!")
 
-            print("Product edited successfully!")
+            print("Product edited successfully!✔️")
             break
 
     if not found:
         print(f"Product with name '{name}' not found.")
 
 
-''' ------------------------------------------------------------------------------------------------ '''
 
 
 def remove():
-    name = input("Enter the name of the product you want to delete: ").strip()
+    name = input("Media Remove : Enter Name of Media ").strip()
 
     found = False
     for product in Products:
@@ -289,19 +287,18 @@ def remove():
             found = True
             show_info(name)
 
-            confirmation = input("Do you want to delete this product? (y/n): ").lower()
+            confirmation = input("⚠️ Do you want to delete this Media? (y/N): ").lower()
             if confirmation == 'y':
                 Products.remove(product)
-                print(f"Product '{name}' deleted successfully!")
+                print(f"Product '{name}' deleted successfully!✔️")
             else:
-                print("Deletion canceled.")
+                print("Deletion canceled.❌")
             break
 
     if not found:
         print(f"Product with name '{name}' not found.")
 
 
-''' ------------------------------------------------------------------------------------------------ '''
 
 
 def show_info(name):
@@ -365,7 +362,6 @@ def show_info(name):
         print(f"Media with name '{name}' not found.")
 
 
-''' ------------------------------------------------------------------------------------------------ '''
 
 
 def advanced_search(min_duration, max_duration):
@@ -379,7 +375,6 @@ def advanced_search(min_duration, max_duration):
         print(f"No Media found with duration between {min_duration} and {max_duration} minutes.")
 
 
-''' ------------------------------------------------------------------------------------------------ '''
 
 
 def download(name):
@@ -400,7 +395,6 @@ def download(name):
         print(f"Product with name '{name}' not found.")
 
 
-''' ------------------------------------------------------------------------------------------------ '''
 
 
 def suggest():
@@ -430,11 +424,10 @@ def write_to_database():
             f.write(str(data) + "\n")
 
 
-''' ------------------------------------------------------------------------------------------------ '''
 # DB load
-print('Welcome to Py Store 🛒')
+print('Welcome to Py MediaClubStore')
 read_from_database()
-print('DB load Successfully')
+print('DB load Successfully✔️')
 
 while True:
     show_menu()

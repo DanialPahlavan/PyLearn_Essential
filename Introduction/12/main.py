@@ -228,7 +228,6 @@ def remove():
     # Inform the user if the media was not found
     print(f"No media found with the name '{media_name}'.")
 
-
 def show_info(media_name):
     # Find the media product by name
     for product in Products:

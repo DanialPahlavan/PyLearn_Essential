@@ -228,6 +228,7 @@ def remove():
     # Inform the user if the media was not found
     print(f"No media found with the name '{media_name}'.")
 
+
 def show_info(media_name):
     # Find the media product by name
     for product in Products:
@@ -308,8 +309,6 @@ def download(name):
 
     # If the media product is not found, inform the user
     print(f"Product with name '{name}' not found.")
-
-
 
 
 def suggest_random_media():

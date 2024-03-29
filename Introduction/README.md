@@ -15,9 +15,3 @@
 4. Check the solutions only after giving it your best shot.
 5. Take on the project challenges to solidify your learning.
 
-### Problem Topics :question:
-
-- **0**: Hello World
-- **1**: Calculator - Triangle Checker - BMI Calculator - Student Academic Status Reporter
-- **3**: Calculator - Triangle Checker - BMI Calculator
-- **4**: Calculator - Triangle Checker - BMI Calculator

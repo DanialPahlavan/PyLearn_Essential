@@ -76,6 +76,11 @@ class Game(arcade.Window):
         self.player.update()
         self.enemies.update()
 
+        # Check for collisions
+        for enemy in self.enemies:
+            if arcade.check_for_collision(self.player, enemy):
+                print("Spaceship collided with an enemy!")
+
         # Check if it's time to spawn new enemies
         self.enemy_spawn_timer += delta_time
         if self.enemy_spawn_timer >= ENEMY_SPAWN_INTERVAL:

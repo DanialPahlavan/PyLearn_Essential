@@ -8,7 +8,7 @@ This Python program is a simple space game featuring a user-controlled spaceship
 
 ## Installation
 
-Make sure you have the **Arcade library** installed. If not, you can install it using:
+Make sure you have the **Arcade library** installed. If not, you can install it using :
 
 ```bash
 pip install arcade

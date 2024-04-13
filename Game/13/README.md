@@ -14,6 +14,12 @@ Make sure you have the **Arcade library** installed. If not, you can install it 
 pip install arcade
 ```
 
+## Gameplay
+
+![spaceship](spaceship.gif)
+
+
+
 ## Usage
 
 1. Run the program.

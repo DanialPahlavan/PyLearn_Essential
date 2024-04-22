@@ -21,10 +21,13 @@ pip install arcade
 
 
 ## Usage
-
-1. Run the program.
-2. Use the left and right arrow keys to maneuver the spaceship.
-3. Avoid colliding with enemies.
+1. clone repo.
+2. run python code :
+```bash
+python3 Spaceship.py
+```
+3. Use the left and right arrow keys to maneuver the spaceship.
+4. Avoid colliding with enemies.
 
 
 
@@ -37,9 +40,10 @@ This Python program displays a grid of colored diamonds in a window.
 ## Usage
 
 The program generates a grid of colored diamonds where every other row and column alternates between red and blue colors.
-
-
-
+* run code with :
+```bash
+python3 diamondgrid.py
+```
 ---
 ### References
 

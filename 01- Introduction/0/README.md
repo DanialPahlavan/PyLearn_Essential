@@ -2,7 +2,7 @@
 
 ## Question :interrobang:
 
-Can you craft a simple Python program that prints "Hello, World!" to the console?
+Can you craft a simple Python program that prints "Hello, World!!" to the console?
 
 This is your first step into the world of Python programming, where every line of code tells a story. Your mission, should you choose to accept it, is to write a script that greets the world with those timeless words.
 

@@ -19,3 +19,21 @@ Welcome to the **SpaceShip Game**! Your mission is to **protect your planet** fr
    - You can restart the game to **embark on another cosmic battle**.
 
 Prepare for interstellar combat and safeguard your planet! 🚀✨
+## GamePlay
+
+<img src="ReadmeFiles/GamePlayGif.gif" alt="GamePlayGif" width="600"/>
+
+## Installation
+
+Make sure you have the **Arcade library** installed. If not, you can install it using :
+
+```bash
+pip install arcade
+```
+
+## Usage
+1. clone repo.
+2. run python code :
+```bash
+python3 spaceship.py
+```

@@ -1,6 +1,8 @@
 import sys
-from PyQt6.QtWidgets import QApplication, QWidget, QPushButton, QGridLayout, QMessageBox, QLabel, QVBoxLayout, QRadioButton, QHBoxLayout
+from PyQt6.QtWidgets import QApplication, QWidget, QPushButton, QGridLayout, QMessageBox, QLabel, QVBoxLayout, \
+    QRadioButton, QHBoxLayout
 from functools import partial
+
 
 class TicTacToe(QWidget):
     def __init__(self):
@@ -65,6 +67,7 @@ class TicTacToe(QWidget):
 
     def updateScoreboard(self):
         self.scoreboard.setText(f'X: {self.score["X"]} - O: {self.score["O"]} - Draws: {self.score["Draw"]}')
+
 
 # Run the application
 if __name__ == '__main__':

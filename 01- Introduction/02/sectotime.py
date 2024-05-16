@@ -1,5 +1,5 @@
-#without using Time lib
-#h = 60 min = 3600 s 
+# without using Time lib
+# h = 60 min = 3600 s
 # // div + round down
 # % remaining 
 hh=0

@@ -30,6 +30,7 @@ Get ready to guide your snake to victory! 🐍🍎🍐
 Engage in an enthralling game of chase and growth as your snake seeks out its next meal. Each fruit consumed lengthens your snake and ups the ante. How long can you last?
 
 ![img.png](img.png)
+
 ## 🚀 Quick Start
 
 Unleash the fun with these simple steps:

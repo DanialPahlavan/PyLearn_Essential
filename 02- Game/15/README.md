@@ -38,6 +38,6 @@ Unleash the fun with these simple steps:
 1. Clone the repository: `git clone https://github.com/your-username/supersnake.git`
 2. Navigate to the game directory: `cd supersnake`
 3. Launch the game: `python supersnake.py`
-4. For an AI play through, run: `python supersnake_ai.py`
+4. For an AI play through, run: `python supersnakeai.py`
 
 
